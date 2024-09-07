@@ -1,6 +1,9 @@
 package com.hackifytech.edu.services;
 
 import org.springframework.stereotype.Service;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
 @Service
 public class CommonServices {
@@ -143,5 +146,14 @@ public class CommonServices {
 				+ "<!--    This template is made Redwan one from Ocoxe. -->\r\n"
 				+ "<!-- https://www.ocoxe.com -->\r\n"
 				+ "</html>";
+	}
+	
+	public byte[] convertPdfToByteArray(String filePath) throws IOException {
+	    File file = new File(filePath);
+	    byte[] fileContent = new byte[(int) file.length()];
+	    try (FileInputStream fileInputStream = new FileInputStream(file)) {
+	        fileInputStream.read(fileContent);
+	    }
+	    return fileContent;
 	}
 }

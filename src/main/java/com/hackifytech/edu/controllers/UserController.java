@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import com.hackifytech.edu.models.User;
 import com.hackifytech.edu.models.requestbodies.LoginRequestBody;
@@ -32,6 +33,9 @@ public class UserController {
     
     @Autowired
     private EmailService emailService;
+    
+    @Autowired
+    private PasswordEncoder passwordEncoder; 
 
     // Get All Users
     @GetMapping("/")
@@ -41,8 +45,17 @@ public class UserController {
     }
 
     // Register a New User
+//    @PostMapping("/")
+//    public ResponseEntity<UserResponseBody> addUser(@RequestBody User user) {
+//        User savedUser = userRepo.save(user);
+//        return ResponseEntity.ok(new UserResponseBody(200, "User created successfully", savedUser));
+//    }
+    
     @PostMapping("/")
     public ResponseEntity<UserResponseBody> addUser(@RequestBody User user) {
+        // Encrypt the password before saving
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        
         User savedUser = userRepo.save(user);
         return ResponseEntity.ok(new UserResponseBody(200, "User created successfully", savedUser));
     }
@@ -50,7 +63,7 @@ public class UserController {
     // Login a User
     @PostMapping("/login")
     public ResponseEntity<UserResponseBody> login(@RequestBody LoginRequestBody loginRequest) {
-        User dbUser = userRepo.findByEmail(loginRequest.getEmail());
+        User dbUser = userRepo.findByEmail(loginRequest.getUsernameOrEmail());
 
         if (dbUser != null) {
             if (loginRequest.getPassword().equals(dbUser.getPassword())) {
