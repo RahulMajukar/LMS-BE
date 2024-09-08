@@ -41,7 +41,8 @@ public class SpringSecurityConfig {
                         "/swagger-ui/**",
                         "/v3/api-docs/**",
                         "/swagger-resources/**",
-                        "/webjars/**"
+                        "/webjars/**",
+                        "/api/**"
                     ).permitAll()
                     .anyRequest().authenticated();
             });

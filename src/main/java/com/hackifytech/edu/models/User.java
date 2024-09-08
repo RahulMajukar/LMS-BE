@@ -53,6 +53,8 @@ public class User {
 	@JsonIgnore
 	private boolean isDeleted=false;
 	
+	private String gender;
+	
 	@JsonIgnore
 	@Column(nullable = false)
     private LocalDateTime createdAt;
