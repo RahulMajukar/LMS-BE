@@ -22,4 +22,8 @@ public class CourseQuiz {
 	@Lob
 	@NotBlank(message = "Answer is mandatory")
 	private String answer; // Corrected type to String
+	
+	  @ManyToOne
+	    @JoinColumn(name = "course_id")
+	    private Courses course;
 }

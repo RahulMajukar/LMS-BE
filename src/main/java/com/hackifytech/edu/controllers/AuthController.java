@@ -4,16 +4,14 @@ package com.hackifytech.edu.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.hackifytech.edu.models.User;
 import com.hackifytech.edu.models.requestbodies.LoginRequestBody;
 import com.hackifytech.edu.models.responsebodies.JWTAuthResponse;
-//import com.hackifytech.edu.models.responsebodies.JWTAuthResponse;
 import com.hackifytech.edu.services.AuthService;
 
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin(origins = "http://localhost:5173")
 public class AuthController {
 
     @Autowired
@@ -35,6 +33,8 @@ public class AuthController {
 
         return ResponseEntity.ok(jwtAuthResponse);
     }
+    
+    
     
 
 }

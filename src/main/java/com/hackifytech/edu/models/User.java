@@ -55,6 +55,14 @@ public class User {
 	
 	private String gender;
 	
+    @ManyToMany
+    @JoinTable(
+        name = "user_courses", 
+        joinColumns = @JoinColumn(name = "user_id"),
+        inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    private Set<Courses> courses;
+	
 	@JsonIgnore
 	@Column(nullable = false)
     private LocalDateTime createdAt;
@@ -71,6 +79,12 @@ public class User {
     @JsonIgnore
     private LocalDateTime lastLogin; 
 	
+//    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+//    @JoinTable(name = "user_roles",
+//        joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+//        inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+//    private Set<Role> roles;
+    
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_roles",
         joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),

@@ -42,7 +42,9 @@ public class SpringSecurityConfig {
                         "/v3/api-docs/**",
                         "/swagger-resources/**",
                         "/webjars/**",
-                        "/api/**"
+                        "/api/**",
+                        "/api/app/**",
+                        "/users/**"
                     ).permitAll()
                     .anyRequest().authenticated();
             });
