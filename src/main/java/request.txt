@@ -1,0 +1,138 @@
+//learning-content-controller/createLearningContent
+{
+  "title": "Module 1: Overview of Programming",
+  "contentOrder": "1",
+  "sideParent": "Introduction",
+  "isDeleted": false,
+  "isApproved": true,
+  "category": {
+  	"id": 1
+  },
+  "jsonObject": {
+    "id": 1,
+    "moduleTitle": "Module 1: Overview of Programming",
+    "seo": {
+      "title": "Learn Programming - Module 1 Overview | Your Site",
+      "description": "Explore the importance of programming and learn Java in this detailed guide. Perfect for beginners and advanced developers.",
+      "keywords": "programming, Java, software development, coding tutorials",
+      "ogTitle": "Module 1: Learn Programming | Your Site",
+      "ogDescription": "Master programming with Java. Learn the basics and explore real-world applications in this comprehensive guide.",
+      "ogType": "article",
+      "ogUrl": "https://yoursite.com/blog/1"
+    },
+    "contentBlocks": [
+      {
+        "type": "heading",
+        "level": 1,
+        "text": "Module 1: Overview of Programming"
+      },
+      {
+        "type": "heading",
+        "level": 2,
+        "text": "Importance of Programming in Today's World"
+      },
+      {
+        "type": "paragraph",
+        "level": 2,
+        "text": "Programming has become an essential skill in today's digital age. From developing apps and websites to automating processes, programming offers endless opportunities to innovate and improve the way we live and work. Java, being one of the most popular programming languages, is widely used for building robust applications for various industries, including finance, healthcare, and technology."
+      },
+      {
+        "type": "image",
+        "src": "https://via.placeholder.com/600x400",
+        "alt": "Programming Concept"
+      },
+      {
+        "type": "paragraph",
+        "text": "Java is platform-independent, which means you can write code on one platform and run it on another. This makes it highly versatile and an ideal choice for developers looking to build cross-platform applications. Learning Java will open doors to many career opportunities and help you understand how technology is shaping the future."
+      },
+      {
+        "type": "paragraph",
+        "text": "Java is a high-level, object-oriented programming language that was first released by Sun Microsystems in 1995. It is widely known for its \"Write Once, Run Anywhere\" philosophy, meaning that once Java code is written, it can be run on any platform that supports Java without needing any modifications."
+      },
+      {
+        "type": "video",
+        "src": "https://www.youtube.com/embed/84vahN4f_Gc",
+        "title": "Introduction to Java Programming"
+      },
+      {
+        "type": "paragraph",
+        "text": "Java is used for building everything from mobile apps to large-scale enterprise systems. It is known for its simplicity, reliability, and security, which makes it the top choice for many developers worldwide."
+      },
+      {
+        "type": "table",
+        "columns": ["Name", "Age", "Occupation"],
+        "rows": [
+          ["Alice", "24", "Engineer"],
+          ["Bob", "29", "Designer"],
+          ["Charlie", "22", "Developer"]
+        ]
+      },
+      {
+        "type": "ul",
+        "items": ["Introduction to Programming", "Variables", "Data Types"]
+      },
+      {
+        "type": "ol",
+        "items": ["Step 1: Install IDE", "Step 2: Setup Project", "Step 3: Write Code"]
+      },
+      {
+        "type": "hr"
+      },
+      {
+        "type": "pre",
+        "code": "function greet() {\n  console.log(\"Hello, World!\");\n}"
+      },
+      {
+        "type": "accordion",
+        "title": "More Info",
+        "content": "This section contains additional information about the topic."
+      },
+      {
+        "type": "paragraph",
+        "text": "Programming has become an essential skill in today's digital age. From developing apps and websites to automating processes, programming offers endless opportunities to innovate and improve the way we live and work."
+      },
+      {
+        "type": "codeBlock",
+        "code": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println('Hello, World!');\n    }\n}",
+        "language": "java"
+      },
+      {
+        "type": "paragraph",
+        "text": "Java is used for building everything from mobile apps to large-scale enterprise systems. It is known for its simplicity, reliability, and security, which makes it the top choice for many developers worldwide."
+      },
+      {
+        "type": "quiz",
+        "questions": {
+          "id": 1,
+          "title": "Java Fundamentals Quiz",
+          "questions": [
+            {
+              "id": 1,
+              "question": "Which of the following is not a valid Java variable name?",
+              "options": [
+                { "id": "a", "text": "myVariable" },
+                { "id": "b", "text": "_myVariable" },
+                { "id": "c", "text": "123variable" },
+                { "id": "d", "text": "$myVariable" }
+              ],
+              "correctAnswer": "c",
+              "explanation": "Variable names cannot start with numbers in Java."
+            },
+            {
+              "id": 2,
+              "question": "What is the default value of a boolean variable in Java?",
+              "options": [
+                { "id": "a", "text": "true" },
+                { "id": "b", "text": "false" },
+                { "id": "c", "text": "null" },
+                { "id": "d", "text": "0" }
+              ],
+              "correctAnswer": "b",
+              "explanation": "The default value of a boolean variable in Java is false."
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
